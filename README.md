@@ -1,2 +1,2 @@
 # Landing-Page_Odin-Project
-ALl photos are from unsplash.
+All photos are from unsplash.

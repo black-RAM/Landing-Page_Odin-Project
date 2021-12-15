@@ -1,10 +1,44 @@
 /* sections are divided with line breaks */
 :root{
-    --var-example: value;
-    /* font-size: 62.5%; */
+    font-size: 62.5%;
 }
 body{
     font-family: 'roboto', Arial, Helvetica, sans-serif;
     box-sizing: border-box !important;
     margin: 0px;
+}
+
+/* classes and elements */
+a{text-decoration: none; color: inherit;}
+a:hover, a:active{
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+    border-bottom-color: var(--underline-color);
+}
+h4{font-weight: 300;}
+
+/* banner section */
+.hero{
+    background-color: #1f2937;
+    padding: 20px 10%;
+}
+nav{
+    font-size: 2rem;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    color: white;
+}
+nav ul{
+    display: inline-flex;
+    flex-flow: wrap row;
+    list-style: none;
+    column-gap: 40px;
+    row-gap: 20px;
+    /* the left padding is for overriding the user defined style */
+    padding-left: 0px;
+}
+nav li>a{
+    color: #d2d2df;
+    --underline-color: #d2d2df;
 }
