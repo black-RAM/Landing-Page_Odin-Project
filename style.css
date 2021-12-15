@@ -1,0 +1,10 @@
+/* sections are divided with line breaks */
+:root{
+    --var-example: value;
+    /* font-size: 62.5%; */
+}
+body{
+    font-family: 'roboto', Arial, Helvetica, sans-serif;
+    box-sizing: border-box !important;
+    margin: 0px;
+}
