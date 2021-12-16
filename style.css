@@ -1,5 +1,7 @@
 /* sections are divided with line breaks; styling is in order of appearance in HTML */
 :root{
+    --gray: #606976;
+    --neutral-dark: #1f2937;
     --dark-blue: #1f2937;
     --rich-blue: #3382f6;
     --rich-blue-dark: #0853c4;
@@ -13,7 +15,7 @@ body{
     margin: 0px;
 }
 
-/* classes and elements */
+/* elements and generic classes*/
 a{text-decoration: none; color: inherit;}
 a:hover, a:active{
     color: inherit;
@@ -21,12 +23,21 @@ a:hover, a:active{
     border-bottom-style: solid;
     border-bottom-color: var(--underline-color);
 }
-p{line-height: 1.5;}
+p, figcaption{line-height: 1.5;}
 a[role="button"]{
     border-radius: 10px;
     border: 1px solid transparent;
     padding: 0.5rem 2rem;
 }
+img{
+    width: 100%; 
+    height: 100%;
+}
+.center-block{
+    margin: 0px auto;
+    width: 85%;
+}
+.center-text{text-align: center;}
 
 /* banner section */
 .hero{
@@ -39,10 +50,6 @@ a[role="button"]{
 .hero::after{
     content: url("./media/wave.svg");
     background-color: white;
-}
-.hero>*{
-    margin: 0px auto;
-    width: 85%;
 }
 nav{
     display: flex;
@@ -87,8 +94,42 @@ header a[role="button"]{
 }
 header a[role="button"]:hover {background-color: var(--rich-blue-dark);}
 .hero-main img{
-    width: 100%; 
-    height: 100%;
     object-fit: cover;
     object-position: left center;
+}
+/* banner section end */
+
+/* photo submissions */
+.submissions{
+    position: relative;
+    top: -80px;
+}
+.submissions h2{
+    color: var(--neutral-dark);
+    font-size: clamp(3.6rem, 6vw, 8rem);
+}
+.submissions .photos{
+    display: flex;
+    flex-wrap: wrap;
+    justify-items: center;
+    gap: 30px;
+}
+.submissions .photos>figure{
+    flex: 1 1 260px;
+}
+.submissions .photos img{
+    border: 4px solid var(--rich-blue-dark);
+    border-radius: 20px;
+    height: 260px;
+    object-fit: cover;
+}
+.submissions .photos figcaption{
+    text-align: center;
+    font-size: 1.2rem;
+    color: var(--gray);
+    padding: 10px 0px;
+}
+.submissions .photos figcaption a{
+    color: var(--rich-blue-dark);
+    --underline-color: var(--rich-blue-dark);
 }
