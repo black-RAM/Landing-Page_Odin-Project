@@ -1,44 +1,94 @@
-/* sections are divided with line breaks */
+/* sections are divided with line breaks; styling is in order of appearance in HTML */
 :root{
-    font-size: 62.5%;
+    --dark-blue: #1f2937;
+    --rich-blue: #3382f6;
+    --rich-blue-dark: #0853c4;
+    --white-purple: #d2d2df;
+    --accented-white: #f9faf8;    
 }
 body{
     font-family: 'roboto', Arial, Helvetica, sans-serif;
     box-sizing: border-box !important;
+    font-size: 62.5%;
     margin: 0px;
 }
 
 /* classes and elements */
 a{text-decoration: none; color: inherit;}
 a:hover, a:active{
+    color: inherit;
     border-bottom-width: 1px;
     border-bottom-style: solid;
     border-bottom-color: var(--underline-color);
 }
-h4{font-weight: 300;}
+p{line-height: 1.5;}
+a[role="button"]{
+    border-radius: 10px;
+    border: 1px solid transparent;
+    padding: 0.5rem 2rem;
+}
 
 /* banner section */
 .hero{
-    background-color: #1f2937;
-    padding: 20px 10%;
+    background-color: var(--dark-blue);
+    /* gradient by https://mycolor.space */
+    background-image: linear-gradient(to right bottom, #1f2937, #222e3f, #253346, #29394e, #2c3e56, #2d435b, #2d4760, #2e4c65, #2d5267, #2f5769, #325c69, #37616a);
+    /* the line below is a hack to remove unexplained overflow */
+    overflow-x: auto;
+}
+.hero::after{
+    content: url("./media/wave.svg");
+    background-color: white;
+}
+.hero>*{
+    margin: 0px auto;
+    width: 85%;
 }
 nav{
-    font-size: 2rem;
     display: flex;
     justify-content: space-between;
+    align-items: baseline;
     flex-wrap: wrap;
-    color: white;
+    column-gap: 30px;
+    font-size: 1.5rem;
 }
+nav h2 {color: var(--accented-white); margin-bottom: 5px;}
 nav ul{
+    --underline-color: var(--white-purple);
+    color: var(--white-purple);
     display: inline-flex;
     flex-flow: wrap row;
     list-style: none;
     column-gap: 40px;
     row-gap: 20px;
-    /* the left padding is for overriding the user defined style */
-    padding-left: 0px;
 }
-nav li>a{
-    color: #d2d2df;
-    --underline-color: #d2d2df;
+.hero-main{
+    display: flex;
+    flex-wrap: wrap-reverse;
+    gap: 20px;
+}
+.hero-main>*{
+    flex: 1 1 400px;
+    max-width: 100%;
+}
+header h1{
+    color: var(--accented-white);
+    font-size: 4rem;
+}
+header :is(p, a){
+    font-size: 1.4rem;
+}
+header p{
+    color: var(--white-purple);
+}
+header a[role="button"]{
+    color: var(--accented-white);
+    background-color: var(--rich-blue);
+}
+header a[role="button"]:hover {background-color: var(--rich-blue-dark);}
+.hero-main img{
+    width: 100%; 
+    height: 100%;
+    object-fit: cover;
+    object-position: left center;
 }
