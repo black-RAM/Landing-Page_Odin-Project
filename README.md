@@ -1,2 +1,2 @@
 # Landing-Page_Odin-Project
-All photos are from unsplash. I have also tried to make the HTML as readable as possible enjoy!
+All photos are from unsplash. I have made the HTML readable and the CSS has only a few media queries in case you wanted to inspect the code. I hope you enjoy it. Happy coding!

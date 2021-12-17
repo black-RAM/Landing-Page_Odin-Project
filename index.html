@@ -11,21 +11,26 @@
         /* to overide the user agent stylsheet */
         ul{padding-left: 0px;}
         figure{margin: 0px;}
+        h1{margin-top: 10px;}
     </style>
 </head>
 <body>
     <div class="hero" role="banner">
         <nav class="center-block">
             <h2>The SPC</h2>
-            <ul>
+            <ul id="nav-links">
                 <li><a href="#">Submissions</a></li>
                 <li><a href="#">Workshops</a></li>
                 <li><a href="#">Merchandise</a></li>
             </ul>
+            <!-- on smaller screen sizes, this SVG menu icon will show and when it is clicked the links above will be visible-->
+            <a href="#nav-links" aria-hidden="true" aria-haspopup="listbox" class="menu-svg">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#fff"><path d="M0 0h24v24H0V0z" fill="none"/><path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/></svg>
+            </a>
         </nav>
         <div class="hero-main center-block">
             <header>
-                <h1>Welcome to the Photo&shy;graphy club</h1>
+                <h1>The Social Photo&shy;graphy club</h1>
                 <p>Photography is the return ticket to what is otherwise gone. It is a form of self expression - an art. Join us and become an artist.</p>
                 <a href="#" role="button">Sign Up</a>
             </header>

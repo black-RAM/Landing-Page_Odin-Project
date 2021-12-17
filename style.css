@@ -44,18 +44,16 @@ img{
     background-color: var(--dark-blue);
     /* gradient by https://mycolor.space */
     background-image: linear-gradient(to right bottom, #1f2937, #222e3f, #253346, #29394e, #2c3e56, #2d435b, #2d4760, #2e4c65, #2d5267, #2f5769, #325c69, #37616a);
-    /* the line below is a hack to remove unexplained overflow */
-    overflow-x: auto;
 }
 .hero::after{
     content: url("./media/wave.svg");
     background-color: white;
 }
+/* navbar start */
 nav{
     display: flex;
     justify-content: space-between;
     align-items: baseline;
-    flex-wrap: wrap;
     column-gap: 30px;
     font-size: 1.5rem;
 }
@@ -64,11 +62,39 @@ nav ul{
     --underline-color: var(--white-purple);
     color: var(--white-purple);
     display: inline-flex;
-    flex-flow: wrap row;
+    flex-flow: row wrap;
     list-style: none;
     column-gap: 40px;
     row-gap: 20px;
 }
+/* menu icon to display navigation links (this shows up on phone sizes) */
+a[href="#nav-links"]{display: none; border-bottom: none;}
+@media (max-width: 800px) {
+    .menu-svg{
+        display: inline-block;
+        justify-self: flex-end;
+    }
+    .menu-svg>svg {
+        width: 2rem;
+        height: 2rem;
+    }
+    #nav-links {display: none;}
+    #nav-links:target{
+        display: block;
+        position: absolute;
+        top: 5rem;
+        right: 7.5%;
+        margin: 0px;
+        list-style: "-   " inside;
+        background-color: black;
+        padding: 1rem;
+        box-shadow: -5px 10px 10px 6px #29293de1;
+    }
+    #nav-links>li{
+        margin: 1rem;
+    }
+}
+/* navbar end & header start*/
 .hero-main{
     display: flex;
     flex-wrap: wrap-reverse;
@@ -92,21 +118,27 @@ header a[role="button"]{
     color: var(--accented-white);
     background-color: var(--rich-blue);
 }
-header a[role="button"]:hover {background-color: var(--rich-blue-dark);}
+header a[role="button"]:is(:hover, :active) {
+    background-color: var(--rich-blue-dark);
+}
+.hero-main figure {
+    margin-top: 10px;
+}
 .hero-main img{
+    min-height: 300px;
     object-fit: cover;
     object-position: left center;
 }
-/* banner section end */
+/* header end */
 
 /* photo submissions */
 .submissions{
     position: relative;
-    top: -80px;
+    top: -10vw;
 }
 .submissions h2{
     color: var(--neutral-dark);
-    font-size: clamp(3.6rem, 6vw, 8rem);
+    font-size: clamp(2.8rem, 5vw, 6rem);
 }
 .submissions .photos{
     display: flex;
