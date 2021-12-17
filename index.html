@@ -10,8 +10,10 @@
     <style>
         /* to overide the user agent stylsheet */
         ul{padding-left: 0px;}
-        figure{margin: 0px;}
+        figure, blockquote{margin: 0px;}
         h1{margin-top: 10px;}
+        p, figcaption{line-height: 1.8em;}
+        cite{font-style: normal;}
     </style>
 </head>
 <body>
@@ -22,10 +24,11 @@
                 <li><a href="#">Submissions</a></li>
                 <li><a href="#">Workshops</a></li>
                 <li><a href="#">Merchandise</a></li>
+                <a href="#" id="close">Close</a>
             </ul>
             <!-- on smaller screen sizes, this SVG menu icon will show and when it is clicked the links above will be visible-->
             <a href="#nav-links" aria-hidden="true" aria-haspopup="listbox" class="menu-svg">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#fff"><path d="M0 0h24v24H0V0z" fill="none"/><path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/></svg>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white"><path d="M0 0h24v24H0V0z" fill="none"/><path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/></svg>
             </a>
         </nav>
         <div class="hero-main center-block">
@@ -61,5 +64,10 @@
             </figure>
         </div>
     </section>
+
+    <blockquote>
+        <p class="text">"When a moment in front of me appears to be particularly special, whether it be by beauty or experience, I capture it. I usually find a reason to justify taking that photo - symmetry, or color or contrast - and it's my hope that my photography sheds light onto what I see and do on a daily basis."</p>
+        <cite>- <a href="https://en.wikipedia.org/wiki/Connor_Franta" target="_blank">Connor Franta</a></cite>
+    </blockquote>
 </body>
 </html>

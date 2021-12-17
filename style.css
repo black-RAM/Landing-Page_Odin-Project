@@ -1,21 +1,23 @@
 /* sections are divided with line breaks; styling is in order of appearance in HTML */
 :root{
+    /* color variables */
     --gray: #606976;
+    --light-gray: #e5e7eb;
     --neutral-dark: #1f2937;
-    --dark-blue: #1f2937;
     --rich-blue: #3382f6;
     --rich-blue-dark: #0853c4;
     --white-purple: #d2d2df;
-    --accented-white: #f9faf8;    
+    --accented-white: #f9faf8;
+    /* setting the REM */
+    font-size: 62.5%;
 }
 body{
     font-family: 'roboto', Arial, Helvetica, sans-serif;
     box-sizing: border-box !important;
-    font-size: 62.5%;
     margin: 0px;
 }
 
-/* elements and generic classes*/
+/* elements and global classes*/
 a{text-decoration: none; color: inherit;}
 a:hover, a:active{
     color: inherit;
@@ -23,11 +25,10 @@ a:hover, a:active{
     border-bottom-style: solid;
     border-bottom-color: var(--underline-color);
 }
-p, figcaption{line-height: 1.5;}
 a[role="button"]{
     border-radius: 10px;
     border: 1px solid transparent;
-    padding: 0.5rem 2rem;
+    padding: 1rem 3rem;
 }
 img{
     width: 100%; 
@@ -41,13 +42,14 @@ img{
 
 /* banner section */
 .hero{
-    background-color: var(--dark-blue);
+    background-color: var(--neutral-dark);
     /* gradient by https://mycolor.space */
     background-image: linear-gradient(to right bottom, #1f2937, #222e3f, #253346, #29394e, #2c3e56, #2d435b, #2d4760, #2e4c65, #2d5267, #2f5769, #325c69, #37616a);
 }
 .hero::after{
     content: url("./media/wave.svg");
     background-color: white;
+    box-sizing: border-box;
 }
 /* navbar start */
 nav{
@@ -55,7 +57,7 @@ nav{
     justify-content: space-between;
     align-items: baseline;
     column-gap: 30px;
-    font-size: 1.5rem;
+    font-size: 2.5rem;
 }
 nav h2 {color: var(--accented-white); margin-bottom: 5px;}
 nav ul{
@@ -68,31 +70,38 @@ nav ul{
     row-gap: 20px;
 }
 /* menu icon to display navigation links (this shows up on phone sizes) */
-a[href="#nav-links"]{display: none; border-bottom: none;}
+a[href="#nav-links"], #nav-links>#close{display: none; border-bottom: none;}
 @media (max-width: 800px) {
-    .menu-svg{
+    a[href="#nav-links"]{
         display: inline-block;
         justify-self: flex-end;
     }
-    .menu-svg>svg {
-        width: 2rem;
-        height: 2rem;
+    a[href="#nav-links"]>svg {
+        width: 4rem;
+        height: 4rem;
     }
     #nav-links {display: none;}
     #nav-links:target{
         display: block;
         position: absolute;
-        top: 5rem;
+        top: 8rem;
         right: 7.5%;
         margin: 0px;
         list-style: "-   " inside;
         background-color: black;
-        padding: 1rem;
+        padding: 1.5rem;
         box-shadow: -5px 10px 10px 6px #29293de1;
     }
     #nav-links>li{
-        margin: 1rem;
+        margin: 1.5rem;
     }
+    #nav-links>#close{
+        color: maroon; 
+        border-bottom: none;
+        margin-left: 40px;
+        display: block;
+    }
+    #nav-links>#close:is(:hover, :active){color: red;}
 }
 /* navbar end & header start*/
 .hero-main{
@@ -106,13 +115,14 @@ a[href="#nav-links"]{display: none; border-bottom: none;}
 }
 header h1{
     color: var(--accented-white);
-    font-size: 4rem;
+    font-size: 6rem;
 }
 header :is(p, a){
-    font-size: 1.4rem;
+    font-size: 2rem;
 }
 header p{
     color: var(--white-purple);
+    padding-bottom: 2rem;
 }
 header a[role="button"]{
     color: var(--accented-white);
@@ -138,7 +148,7 @@ header a[role="button"]:is(:hover, :active) {
 }
 .submissions h2{
     color: var(--neutral-dark);
-    font-size: clamp(2.8rem, 5vw, 6rem);
+    font-size: clamp(5rem, 5vw, 8rem);
 }
 .submissions .photos{
     display: flex;
@@ -157,11 +167,30 @@ header a[role="button"]:is(:hover, :active) {
 }
 .submissions .photos figcaption{
     text-align: center;
-    font-size: 1.2rem;
+    font-size: 2rem;
     color: var(--gray);
     padding: 10px 0px;
 }
 .submissions .photos figcaption a{
     color: var(--rich-blue-dark);
     --underline-color: var(--rich-blue-dark);
+}
+/* photo submissions end */
+
+blockquote{
+    background-color: var(--light-gray);
+    color: var(--neutral-dark);
+    padding: 3rem 10%;
+    display: flow-root;
+}
+blockquote .text{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 3rem;
+    font-weight: 300;
+    font-style: italic;
+}
+blockquote cite{
+    font-size: 2rem;
+    font-weight: 800;
+    float: right;
 }
